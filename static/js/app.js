@@ -37,13 +37,13 @@ button.on("click", function() {
   // Get the value property of the input element
   var inputValue = inputElement.property("value");
 
+  // Get the filtered data based on input value
+  var filteredData = tableData.filter(ufo => ufo.datetime === inputValue);
+
   // Log the input value
   console.log(inputValue);
 
-  // Filter the data based on the input value
-  var filteredData = tableData.filter(ufo => ufo.datetime === inputValue);
-
-  // Display just the filteredData
+  // Change the table on the site
   tbody.html(""); // remove any existing table data
   populateTable(filteredData); // use populate table function to add filtered data
 });
